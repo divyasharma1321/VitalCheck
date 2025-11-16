@@ -1,0 +1,193 @@
+
+<!-- ---------- HEADER ---------- -->
+<header>
+    <div class="wrap">
+        <div class="head-content">
+
+            <div class="brand">
+                <span class="brand-icon">✢</span>
+                VitalCheck
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a style="background:rgba(255,255,255,.25)" href="#">Home</a></li>
+                    <li><a href="HowItWorks.html">How It Works</a></li>
+                    <li><a href="#">Get Recommendations</a></li>
+                    <li><a href="#">My Results</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</header>
+
+
+<!-- ---------- MAIN CONTENT ---------- -->
+<main class="wrap">
+
+    <!-- HERO -->
+    <section class="hero-box">
+        <h1>Personalized Supplement Advice Made Simple</h1>
+        <p>
+            Forget scrolling endlessly through blogs and supplement aisles. Get recommendations
+            matched to your age, goals, and lifestyle — without the headache.
+        </p>
+        <a class="cta" href="#">Start Your Plan</a>
+    </section>
+
+    <!-- FEATURES -->
+    <div class="feature-grid">
+
+        <div class="featBox">
+            <div class="feat-icon">⏱️</div>
+            <h3>Save Time</h3>
+            <p>Skip the chaotic research rabbit hole — we boiled it down for you.</p>
+        </div>
+
+        <div class="featBox">
+            <div class="feat-icon">💰</div>
+            <h3>Save Money</h3>
+            <p>Stop buying things that looked cool online but don't really help.</p>
+        </div>
+
+        <div class="featBox">
+            <div class="feat-icon">🎯</div>
+            <h3>Feels Personal</h3>
+            <p>Your health profile actually matters here. Finally.</p>
+        </div>
+
+    </div>
+
+    <!-- PROBLEM SECTION -->
+    <div class="info-card">
+        <h2>The Supplement Confusion Problem</h2>
+
+        <p style="margin-top:.9rem;">
+            There are tens of thousands of supplements out there (yeah, I checked, too many).
+            It's no wonder people feel lost.
+        </p>
+
+        <ul style="margin:1rem 0 0 1.2rem;">
+            <li>Confusing & contradictory info everywhere</li>
+            <li>Buying supplements that miss your real needs</li>
+            <li>Potential allergies or side effects</li>
+            <li>Lots of wasted cash</li>
+        </ul>
+
+        <p style="margin-top:1rem;">
+            VitalCheck trims all of that into simple, evidence-backed suggestions.
+        </p>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <h2 style="text-align:center; margin:3rem 0 1rem; color:#6b57f0;">
+        What People Are Saying
+    </h2>
+
+    <div class="t-grid">
+
+        <div class="t-card">
+            <div class="t-text">
+                "I kept buying supplements hoping something would help. VitalCheck gave me a clear plan
+                that actually made sense."
+            </div>
+
+            <div class="t-author">
+                <div class="t-avatar">AS</div>
+                <div>
+                    <h4 style="color:#6b57f0;">Aradhya Singh</h4>
+                    <p>42 • Active Lifestyle</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="t-card">
+            <div class="t-text">
+                "With all my allergies, supplement shopping was stressful.
+                VitalCheck filtered everything for me safely."
+            </div>
+
+            <div class="t-author">
+                <div class="t-avatar">AK</div>
+                <div>
+                    <h4 style="color:#6b57f0;">Aryan Kumar</h4>
+                    <p>35 • Allergies: Dairy, Gluten</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FINAL CTA -->
+    <div class="info-card" style="text-align:center;">
+        <h2>Ready to Find What Works for You?</h2>
+        <p>Thousands have used VitalCheck to simplify their health routines.</p>
+        <a class="cta" href="#">Get Started</a>
+    </div>
+
+</main>
+
+
+<!-- ---------- FOOTER ---------- -->
+<footer>
+    <div class="wrap" style="text-align:center;">
+
+        <div class="brand" style="justify-content:center;">
+            <span class="brand-icon">✢</span> VitalCheck
+        </div>
+
+        <div style="margin:1.7rem 0;">
+            <a href="#" style="margin:0 .8rem; color:#fff;">Home</a>
+            <a href="HowItWorks.html" style="margin:0 .8rem; color:#fff;">How It Works</a>
+            <a href="#" style="margin:0 .8rem; color:#fff;">Contact</a>
+            <a href="#" style="margin:0 .8rem; color:#fff;">Privacy Policy</a>
+            <a href="#" style="margin:0 .8rem; color:#fff;">Terms</a>
+        </div>
+
+        <p style="opacity:.75; font-size:.9rem;">
+            © 2025 VitalCheck. Not medical advice — just helpful guidance.
+        </p>
+
+    </div>
+</footer>
+
+
+<!-- ---------- JS SECTION ---------- -->
+<script>
+    // TODO: move this to a separate JS file once I stop being lazy
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        // Handling all main CTAs
+        const btns = document.querySelectorAll(".cta");
+
+        btns.forEach(function (button) {
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+                // Probably replace this with a real redirect later
+                alert("Thanks for your interest! Normally you'd go to the sign-up flow.");
+            });
+        });
+
+        // Fade-in effect for cards (kinda overkill but looks nice)
+        const floatStuff = document.querySelectorAll(".info-card, .featBox, .t-card");
+
+        floatStuff.forEach(function (el) {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(20px)";
+            el.style.transition = "opacity .55s, transform .55s";
+        });
+
+        // Slight delay for dramatic effect
+        setTimeout(function () {
+            floatStuff.forEach(function (el, idx) {
+                setTimeout(function () {
+                    el.style.opacity = "1";
+                    el.style.transform = "translateY(0)";
+                }, idx * 180); // small stagger animation
+            });
+        }, 450);
+    });
+</script>

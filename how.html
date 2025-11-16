@@ -1,0 +1,315 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Vital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #2E8B57;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        
+        h2 {
+            color: #2E8B57;
+            border-bottom: 2px solid #2E8B57;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #1F6B45;
+        }
+        
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+        }
+        
+        .step {
+            width: 23%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            background-color: #2E8B57;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .feature {
+            width: 30%;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #2E8B57;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .checkmark {
+            color: green;
+            font-weight: bold;
+        }
+        
+        .x-mark {
+            color: red;
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 12px;
+            background-color: #2E8B57;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .btn:hover {
+            background-color: #1F6B45;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .step, .feature {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>How Vital Works</h1>
+            <p>Personalized supplement recommendations based on your unique needs</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <h2>The Science Behind Our Recommendations</h2>
+            <p>Vital's algorithm analyzes scientific studies to match supplements to your specific needs:</p>
+            <ul>
+                <li><strong>Age & Gender:</strong> Nutritional needs change throughout life</li>
+                <li><strong>Allergies:</strong> We filter out supplements with ingredients you're allergic to</li>
+                <li><strong>Health Goals:</strong> Your objectives determine which supplements will help most</li>
+                <li><strong>Interactions:</strong> We consider how supplements might interact with each other</li>
+            </ul>
+        </div>
+        
+        <h2>Our 4-Step Process</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Complete Your Profile</h3>
+                <p>Share your age, gender, allergies, and health goals</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Personalized Analysis</h3>
+                <p>Our algorithm processes your information</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Tailored Recommendations</h3>
+                <p>Receive your customized supplement plan</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Ongoing Optimization</h3>
+                <p>Update your profile for new recommendations</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Why Personalization Matters</h2>
+            <p>Generic supplement advice often doesn't work because everyone is different:</p>
+            
+            <table>
+                <tr>
+                    <th>Factor</th>
+                    <th>Generic Approach</th>
+                    <th>Vital's Approach</th>
+                </tr>
+                <tr>
+                    <td>Iron Supplements</td>
+                    <td class="x-mark">Recommended for everyone with fatigue</td>
+                    <td class="checkmark">Only when appropriate based on your profile</td>
+                </tr>
+                <tr>
+                    <td>Vitamin D</td>
+                    <td class="x-mark">Standard dosage for all adults</td>
+                    <td class="checkmark">Dosage adjusted based on your needs</td>
+                </tr>
+                <tr>
+                    <td>Allergies</td>
+                    <td class="x-mark">Often overlooked</td>
+                    <td class="checkmark">All supplements filtered for allergens</td>
+                </tr>
+            </table>
+        </div>
+        
+        <h2>Key Features</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🔬</div>
+                <h3>Evidence-Based</h3>
+                <p>Recommendations backed by scientific research</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3>Safety First</h3>
+                <p>We screen for potential interactions</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h3>Precision Targeting</h3>
+                <p>Supplements matched to your specific needs</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Real Examples</h2>
+            
+            <h3>Case 1: Joint Health</h3>
+            <p><strong>Profile:</strong> Male, 50, active, joint discomfort</p>
+            <p><strong>Recommendations:</strong> Glucosamine, Omega-3s, Turmeric</p>
+            
+            <h3>Case 2: Energy Support</h3>
+            <p><strong>Profile:</strong> Female, 30, vegetarian, fatigue</p>
+            <p><strong>Recommendations:</strong> B-complex, Iron, CoQ10</p>
+            
+            <h3>Case 3: Immune Support</h3>
+            <p><strong>Profile:</strong> 40, shellfish allergy, frequent colds</p>
+            <p><strong>Recommendations:</strong> Vitamin D, Zinc, Vitamin C</p>
+        </div>
+        
+        <a href="#" class="btn">Get Started Now</a>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 Vital. All rights reserved.</p>
+            <p>This information is for educational purposes only and is not medical advice.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript to make the page interactive
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to the button
+            const button = document.querySelector('.btn');
+            button.addEventListener('click', function() {
+                alert('Thank you for your interest! You would now be directed to create your profile.');
+            });
+            
+            // Add hover effect to cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseover', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.transition = 'transform 0.3s';
+                });
+                
+                card.addEventListener('mouseout', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Add click effect to steps
+            const steps = document.querySelectorAll('.step');
+            steps.forEach(step => {
+                step.addEventListener('click', function() {
+                    const stepNumber = this.querySelector('.step-number').textContent;
+                    alert('Step ' + stepNumber + ' explained in detail');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

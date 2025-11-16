@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Selection</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            width: 260px;
+            border: 2px solid #ccc;
+            border-radius: 20px;
+            padding: 30px 20px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .card img {
+            width: 90px;
+            margin-bottom: 15px;
+        }
+
+        .card:hover {
+            border-color: #000;
+            transform: scale(1.03);
+        }
+
+        .selected {
+            border-color: #000;
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 10px 25px;
+            font-size: 16px;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Whose health profile are we creating today?</h1>
+
+    <div class="container">
+        <div class="card" id="myself">
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="Myself">
+            <p><b>Myself</b></p>
+        </div>
+
+        <div class="card" id="someone">
+            <img src="https://cdn-icons-png.flaticon.com/512/2922/2922688.png" alt="Someone else">
+            <p><b>Someone else</b></p>
+        </div>
+    </div>
+
+    <button onclick="nextPage()">NEXT</button>
+
+    <script>
+        let selected = "";
+
+        const card1 = document.getElementById("myself");
+        const card2 = document.getElementById("someone");
+
+        card1.onclick = () => {
+            selected = "myself";
+            card1.classList.add("selected");
+            card2.classList.remove("selected");
+        };
+
+        card2.onclick = () => {
+            selected = "someone_else";
+            card2.classList.add("selected");
+            card1.classList.remove("selected");
+        };
+
+        function nextPage() {
+            if (selected === "") {
+                alert("Please select an option first.");
+                return;
+            }
+            alert("You selected: " + selected);
+
+            // Later you can change this to move to the next page:
+            // window.location.href = "nextpage.html";
+        }
+    </script>
+
+</body>
+</html>

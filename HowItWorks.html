@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Vital</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E8FFF6 ;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(to right, #3B82F6, #9333EA);
+            color:#FFFFFF;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        h2 {
+            color:#675AF0;
+            margin: 30px 0 15px;
+            font-size: 26px;
+            border-left: 5px solid #003DA5;
+            padding-left: 15px;
+        }
+
+        h3 {
+            color:#675AF0;
+            margin: 20px 0 10px;
+            font-size: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+        }
+
+        .step {
+            width: 23%;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .step-number {
+            background-color: #675AF0;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+            font-size: 20px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .step-content {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            height: 100%;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+        }
+
+        .feature {
+            width: 30%;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: scale(1.05);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color:#003DA5;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color:#003DA5;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .checkmark {
+            color: #003DA5;
+            font-weight: bold;
+        }
+
+        .x-mark {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: block;
+            width: 220px;
+            margin: 40px auto;
+            padding: 15px;
+            background:#675AF0;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #003DA5;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+
+            .step,
+            .feature {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>How Vital Works</h1>
+            <p class="subtitle">Personalized supplement recommendations based on your unique needs</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>The Science Behind Our Recommendations</h2>
+            <p>Vital's algorithm analyzes scientific studies to match supplements to your specific needs:</p>
+            <ul>
+                <li><strong>Age & Gender:</strong> Nutritional needs change throughout life</li>
+                <li><strong>Allergies:</strong> We filter out supplements with ingredients you're allergic to</li>
+                <li><strong>Health Goals:</strong> Your objectives determine which supplements will help most</li>
+                <li><strong>Interactions:</strong> We consider how supplements might interact with each other</li>
+            </ul>
+        </div>
+
+        <h2>Our 4-Step Process</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Complete Your Profile</h3>
+                    <p>Share your age, gender, allergies, and health goals</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Personalized Analysis</h3>
+                    <p>Our algorithm processes your information</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Tailored Recommendations</h3>
+                    <p>Receive your customized supplement plan</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Ongoing Optimization</h3>
+                    <p>Update your profile for new recommendations</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Why Personalization Matters</h2>
+            <p>Generic supplement advice often doesn't work because everyone is different:</p>
+
+            <table>
+                <tr>
+                    <th>Factor</th>
+                    <th>Generic Approach</th>
+                    <th>Vital's Approach</th>
+                </tr>
+                <tr>
+                    <td>Iron Supplements</td>
+                    <td class="x-mark">Recommended for everyone with fatigue</td>
+                    <td class="checkmark">Only when appropriate based on your profile</td>
+                </tr>
+                <tr>
+                    <td>Vitamin D</td>
+                    <td class="x-mark">Standard dosage for all adults</td>
+                    <td class="checkmark">Dosage adjusted based on your needs</td>
+                </tr>
+                <tr>
+                    <td>Allergies</td>
+                    <td class="x-mark">Often overlooked</td>
+                    <td class="checkmark">All supplements filtered for allergens</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2>Key Features</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🔬</div>
+                <h3>Evidence-Based</h3>
+                <p>Recommendations backed by scientific research</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3>Safety First</h3>
+                <p>We screen for potential interactions</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h3>Precision Targeting</h3>
+                <p>Supplements matched to your specific needs</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Progress Tracking</h3>
+                <p>Monitor your health improvements over time</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Real Examples</h2>
+
+            <h3>Case 1: Joint Health</h3>
+            <p><strong>Profile:</strong> Male, 50, active, joint discomfort</p>
+            <p><strong>Recommendations:</strong> Glucosamine, Omega-3s, Turmeric</p>
+
+            <h3>Case 2: Energy Support</h3>
+            <p><strong>Profile:</strong> Female, 30, vegetarian, fatigue</p>
+            <p><strong>Recommendations:</strong> B-complex, Iron, CoQ10</p>
+
+            <h3>Case 3: Immune Support</h3>
+            <p><strong>Profile:</strong> 40, shellfish allergy, frequent colds</p>
+            <p><strong>Recommendations:</strong> Vitamin D, Zinc, Vitamin C</p>
+        </div>
+
+        <button class="btn">Get Started Now</button>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <p>© 2025 VitalCheck. All rights reserved.</p>
+            <p>This information is for educational purposes only and is not medical advice.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for interactivity
+        document.addEventListener('DOMContentLoaded', function () {
+            // Button click event
+            const button = document.querySelector('.btn');
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                alert('Thank you for your interest! You would now be directed to create your profile.');
+            });
+
+            // Add animation to cards when they come into view
+            const cards = document.querySelectorAll('.card, .feature, .step-content');
+
+            // Simple animation on page load
+            setTimeout(function () {
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 200);
+                });
+            }, 500);
+
+            // Set initial state for animation
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s, transform 0.5s';
+            });
+
+            // Add click effect to steps
+            const steps = document.querySelectorAll('.step');
+            steps.forEach(step => {
+                step.addEventListener('click', function () {
+                    const stepNumber = this.querySelector('.step-number').textContent;
+                    const stepTitle = this.querySelector('h3').textContent;
+                    alert(`Step ${stepNumber}: ${stepTitle}`);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

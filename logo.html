@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital - Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width: 40px;
+        }
+
+        .nav-buttons .btn {
+            margin-left: 10px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 8px 20px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .grey {
+            background: #ededed;
+        }
+
+        .pink {
+            background: #ff4f70;
+            color: white;
+        }
+
+        /* CONTENT CENTER */
+        .container {
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            font-size: 14px;
+            color: gray;
+        }
+
+        /* LOGIN BOX */
+        .login-box {
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .login-box input {
+            height: 40px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 10px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP NAV -->
+    <header class="navbar">
+        <div class="logo">
+            <!-- Replace with your logo image -->
+            <img src="heart-logo.png" alt="logo">
+            <span>vital</span>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="btn grey">Login</button>
+            <button class="btn grey">Register</button>
+        </div>
+    </header>
+
+    <!-- LOGIN BOX -->
+    <main class="container">
+        <h1>Welcome back!</h1>
+        <p class="subtitle">Hope you'r
