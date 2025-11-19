@@ -1,0 +1,384 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital - Personalized Supplement Recommendations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .wrapper {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header {
+            background: linear-gradient(to right, #3B82F6, #9333EA);
+            color: white;
+            padding: 1rem 0;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 1.5rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .banner {
+            background: linear-gradient(to right, #3B82F6, #9333EA);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .banner-title {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .banner-text {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .button {
+            display: inline-block;
+            background:#003DA5;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background:#675AF0;
+        }
+
+        .content-box {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-box h2 {
+            color: #675AF0;
+            margin-bottom: 1rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color:#675AF0;
+            margin-bottom: 1.5rem;
+        }
+
+        .reviews {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .review-item {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #675AF0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .author-name {
+            margin: 0;
+            color: #675AF0;
+        }
+
+        .author-info {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            margin: 2rem 0;
+        }
+
+        .footer-link {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-list {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-item {
+                margin: 0.5rem;
+            }
+            
+            .banner-title {
+                font-size: 2.2rem;
+            }
+            
+            .features, .reviews {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <div class="header-inner">
+                <div class="logo">
+                    <span class="logo-icon">✢</span>
+                    <span>VitalCheck</span>
+                </div>
+                <nav>
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#" class="nav-link" style="background-color: rgba(255,255,255,0.2);">Home</a></li>
+                        <li class="nav-item"><a href="HowItWorks.html" class="nav-link">How It Works</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Get Recommendations</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">My Results</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Feedback</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="wrapper">
+        <section class="banner">
+            <h1 class="banner-title">Personalized Supplement Recommendations</h1>
+            <p class="banner-text">Stop guessing which supplements are right for you. Get science-backed recommendations tailored to your unique body, health goals, and lifestyle.</p>
+            <a href="#" class="button">Get Your Personalized Plan</a>
+        </section>
+        
+        <div class="features">
+            <div class="feature-item">
+                <div class="feature-icon">⏱️</div>
+                <h3>Save Time</h3>
+                <p>No more endless research. Get targeted supplement recommendations in minutes.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">💰</div>
+                <h3>Save Money</h3>
+                <p>Avoid wasting money on supplements that don't work for your specific needs.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">🎯</div>
+                <h3>Personalized Approach</h3>
+                <p>Recommendations based on your age, gender, allergies, and health goals.</p>
+            </div>
+        </div>
+        
+
+        <div class="content-box">
+            <h2>The Supplement Confusion Problem</h2>
+            <p>With over 29,000 dietary supplements on the market, finding what actually works for you can be overwhelming. Most people:</p>
+            <ul>
+                <li>Spend hours researching with conflicting information</li>
+                <li>Buy supplements that don't address their specific needs</li>
+                <li>Experience potential side effects from inappropriate products</li>
+                <li>Waste hundreds of dollars on ineffective solutions</li>
+            </ul>
+            <p>Vital cuts through the noise with personalized, evidence-based recommendations.</p>
+        </div>
+        
+        <h2 style="text-align: center; color:#675AF0 ; margin: 3rem 0 1rem;">What Our Users Say</h2>
+        <div class="reviews">
+            <div class="review-item">
+                <div class="review-text">
+                    "I was overwhelmed by all the supplement options. VitalCheck gave me a clear plan that actually worked for my energy and joint issues."
+                </div>
+                <div class="review-author">
+                    <div class="author-img">AS</div>
+                    <div class="author-details">
+                        <h4 class="author-name">Aradhya Singh</h4>
+                        <p class="author-info">Age 42, Active Lifestyle</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-item">
+                <div class="review-text">
+                    "As someone with multiple allergies, finding safe supplements was a challenge. VitalCheck considered all my restrictions and gave me perfect recommendations."
+                </div>
+                <div class="review-author">
+                    <div class="author-img">AK</div>
+                    <div class="author-details">
+                        <h4 class="author-name">Aryan Kumar</h4>
+                        <p class="author-info">Age 35, Allergies: Gluten & Dairy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-box" style="text-align: center;">
+            <h2>Ready to Find Your Perfect Supplements?</h2>
+            <p>Join thousands of users who have simplified their health journey with personalized supplement recommendations.</p>
+            <a href="#" class="button">Get Started Today</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer-inner">
+                <div class="logo">
+                    <span class="logo-icon">✢</span>
+                    <span>VitalCheck</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Home</a>
+                    <a href="HowItWorks.html" class="footer-link">How It Works</a>
+                    <a href="#" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+                <p class="copyright">© 2025 VitalCheck. All rights reserved. This information is for educational purposes only and is not medical advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+       
+        window.onload = function() {
+            
+            var buttons = document.querySelectorAll('.button');
+            
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your interest! You would now be directed to create your profile.');
+                });
+            }
+        };
+    </script>
+</body>
+</html>
