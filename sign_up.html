@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Box</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      height: 400px;
+      width: 400px;
+      background: linear-gradient(to right, #3B82F6, #9333EA);
+      padding: 60px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      text-align: center;
+      color: black;
+      padding-bottom: 10px;
+    }
+
+    label {
+      font-size: 25px;
+      font-weight: 600; /* fixed */
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      height: 30px;
+      padding: 20px;
+      font-size: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      display: block;
+    }
+
+    button {
+      width: 100%;
+      height: 40px;
+      font-size: 20px;
+      padding: 5px;
+      background-color: black;
+      color: white;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <form>
+      <h1>WELCOME!</h1>
+      <div>
+        <label for="first">Email:</label>
+        <input type="email" id="first" placeholder="Enter your Email">
+      </div>
+      <div>
+        <label for="second">Password:</label>
+        <input type="text" id="second" placeholder="Enter your password">
+      </div>
+      <button>Sign Up</button>
+    </form>
+  </div>
+</body>
+</html>
+

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Medical Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+
+    
+
+        .container {
+            background: white;
+            padding: 20px;
+            width: 380px;
+            margin: 60px auto; /* space for logo */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .gender-option {
+            display: flex;
+            align-items: center;
+            margin: 6px 0;
+            cursor: pointer;
+        }
+
+        .icon-circle {
+            width: 30px;
+            height: 30px;
+            background: #ddd;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+        .male { background: #87CEEB; }
+        .female { background: #FFB6C1; }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background:  #3B82F6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background:  #9333EA;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background: linear-gradient(to right, #3B82F6, #9333EA);;
+            border: 1px solid #7ad37a;
+            display: none;
+        }
+       .logo{
+        font-weight:700;
+        display:flex; 
+        align-items:center;
+        font-size:1.8rem;
+       }
+
+       .logo-icon{ 
+        margin-right:10px;
+        font-size:2rem;
+       }
+
+    </style>
+</head>
+
+<body>
+<div class="logo">
+                <span class="logo-icon">✢</span>
+                <span>VitalCheck</span>
+</div>
+
+<div class="container">
+    <h2>User Medical Form</h2>
+
+    <!-- Name -->
+    <div class="form-group">
+        <label>Name:</label><br>
+        <input type="text" id="name" placeholder="Enter your name" required>
+    </div>
+
+    <!-- Gender -->
+    <div class="form-group">
+        <label>Gender:</label><br>
+
+        <label class="gender-option">
+            <input type="radio" name="gender" value="Male">
+            <div class="icon-circle male">♂</div> Male
+        </label>
+
+        <label class="gender-option">
+            <input type="radio" name="gender" value="Female">
+            <div class="icon-circle female">♀</div> Female
+        </label>
+
+        <label class="gender-option">
+            <input type="radio" name="gender" value="Other">
+            <div class="icon-circle">⚧</div> Other
+        </label>
+    </div>
+
+    <!-- Age -->
+    <div class="form-group">
+        <label>Age:</label><br>
+        <input type="number" id="age" min="1" placeholder="Enter your age">
+    </div>
+
+    <!-- Allergies -->
+    <div class="form-group">
+        <label>Allergies:</label><br>
+        <input type="checkbox" class="allergy" value="Pollen"> Pollen<br>
+        <input type="checkbox" class="allergy" value="Dust"> Dust<br>
+        <input type="checkbox" class="allergy" value="Peanuts"> Peanuts<br>
+        <input type="checkbox" class="allergy" value="Milk"> Milk<br>
+        <input type="checkbox" class="allergy" value="Eggs"> Eggs<br>
+        <input type="checkbox" class="allergy" value="Seafood"> Seafood<br>
+    </div>
+
+    <!-- Diseases -->
+    <div class="form-group">
+        <label>Diseases:</label><br>
+        <input type="checkbox" class="disease" value="Diabetes"> Diabetes<br>
+        <input type="checkbox" class="disease" value="Asthma"> Asthma<br>
+        <input type="checkbox" class="disease" value="Hypertension"> Hypertension<br>
+        <input type="checkbox" class="disease" value="Heart Disease"> Heart Disease<br>
+        <input type="checkbox" class="disease" value="Arthritis"> Arthritis<br>
+        <input type="checkbox" class="disease" value="Thyroid"> Thyroid<br>
+    </div>
+
+    <!-- Submit -->
+    <button onclick="submitForm()">Submit</button>
+
+    <!-- Output -->
+    <div id="result"></div>
+</div>
+
+<script>
+function submitForm() {
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+
+    let gender = document.querySelector('input[name="gender"]:checked');
+    gender = gender ? gender.value : "Not selected";
+
+    let allergies = [];
+    document.querySelectorAll('.allergy:checked').forEach(a => allergies.push(a.value));
+
+    let diseases = [];
+    document.querySelectorAll('.disease:checked').forEach(d => diseases.push(d.value));
+
+    document.getElementById("result").style.display = "block";
+    document.getElementById("result").innerHTML =
+        "<strong>Name:</strong> " + name + "<br>" +
+        "<strong>Gender:</strong> " + gender + "<br>" +
+        "<strong>Age:</strong> " + age + "<br>" +
+        "<strong>Allergies:</strong> " + (allergies.length ? allergies.join(', ') : "None") + "<br>" +
+        "<strong>Diseases:</strong> " + (diseases.length ? diseases.join(', ') : "None");
+}
+</script>
+
+</body>
+</html>
